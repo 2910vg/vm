@@ -9,6 +9,10 @@ LABEL description="This is custom Docker Image for the PHP-FPM and Nginx Service
 # Disable Prompt During Packages Installation
 ARG DEBIAN_FRONTEND=noninteractive
 
+
+# Fix potential UTF-8 errors
+RUN locale-gen en_US.UTF-8
+
 # Update Ubuntu Software repository
 RUN apt update
 
